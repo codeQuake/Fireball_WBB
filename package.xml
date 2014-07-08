@@ -22,5 +22,7 @@
 		<requiredpackage minversion="4.0.0">com.woltlab.wbb</requiredpackage>
 	</requiredpackages>
 
-	<instructions type="install"></instructions>
+	<instructions type="install">
+		<instruction type="objectType">xml/objectType.xml</instruction>
+	</instructions>
 </package>
