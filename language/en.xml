@@ -5,5 +5,7 @@
 	<category name="cms.acp.content">
 		<item name="cms.acp.content.type.de.codequake.cms.content.type.boardlist"><![CDATA[Boardlist]]></item>
 		<item name="cms.acp.content.type.de.codequake.cms.content.type.boardlist.description"><![CDATA[This content type lists all boards like on the Burning Board index page.]]></item>
+				<item name="cms.acp.content.type.de.codequake.cms.content.type.lastposts"><![CDATA[Latest posts]]></item>
+		<item name="cms.acp.content.type.de.codequake.cms.content.type.lastposts.limit"><![CDATA[Amount of posts]]></item>
 	</category>
 </language>
