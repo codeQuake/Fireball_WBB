@@ -2,6 +2,7 @@
 namespace cms\system\content\type;
 
 use cms\data\content\Content;
+use wbb\data\board\DetailedBoardNodeList;
 use wcf\system\WCF;
 
 /**
@@ -22,6 +23,11 @@ class BoardlistContentType extends AbstractContentType {
 	}
 
 	public function getOutput(Content $content) {
-
+		$boardNodeList = new DetailedBoardNodeList();
+		$boardNodeList->readNodeTree();
+		WCF::getTPL()->assign(array(
+			'boardNodeList' => $boardNodeList->getNodeList()
+		));
+		return WCF::getTPL()->fetch('boardList', 'wbb');
 	}
 }

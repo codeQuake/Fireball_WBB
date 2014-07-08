@@ -23,6 +23,10 @@
 	</requiredpackages>
 
 	<instructions type="install">
+		<!-- tar -->
+		<instruction type="file">files.tar</instruction>
+
+		<!-- xml -->
 		<instruction type="objectType">xml/objectType.xml</instruction>
 	</instructions>
 </package>
