@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd"
+	languagecode="de">
+	<category name="cms.acp.content">
+		<item name="cms.acp.content.type.de.codequake.cms.content.type.boardlist"><![CDATA[Forenauflistung]]></item>
+		<item name="cms.acp.content.type.de.codequake.cms.content.type.boardlist.description"><![CDATA[Dieser Inhaltstyp listet automatisch alle Foren auf, wie auf der Startseite des Burning Boards.]]></item>
+	</category>
+</language>

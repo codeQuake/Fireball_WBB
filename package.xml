@@ -4,8 +4,7 @@
 	xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
 		<packagename>Fireball CMS - Burning Board Integration</packagename>
-		<packagedescription languagecode="de">Stellt Funktionen des WoltLab Burning Boards in der Seitenverwaltung zur Verfügung</packagedescription>
-		<packagedescription languagecode="en">WoltLab Burning Board Content Types</packagedescription>
+		<packagedescription>Stellt Funktionen des WoltLab Burning Boards in der Seitenverwaltung zur Verfügung</packagedescription>
 		<plugin>de.codequake.cms</plugin>
 		<version>1.0.0 Alpha 1</version>
 		<date>2014-07-08</date>
@@ -23,6 +22,9 @@
 	</requiredpackages>
 
 	<instructions type="install">
+		<!--lang -->
+		<instruction type="language">language/*.xml</instruction>
+
 		<!-- tar -->
 		<instruction type="file">files.tar</instruction>
 
