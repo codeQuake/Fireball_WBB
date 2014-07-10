@@ -26,9 +26,9 @@
 		<instruction type="language">language/*.xml</instruction>
 
 		<!-- tar -->
-		<instruction type="file">files.tar</instruction>
-		<instruction type="acpTemplate">acptemplates.tar</instruction>
-		<instruction type="template">templates.tar</instruction>
+		<instruction type="file" application="cms">files.tar</instruction>
+		<instruction type="acpTemplate" application="cms">acptemplates.tar</instruction>
+		<instruction type="template" application="cms">templates.tar</instruction>
 
 		<!-- xml -->
 		<instruction type="objectType">xml/objectType.xml</instruction>
