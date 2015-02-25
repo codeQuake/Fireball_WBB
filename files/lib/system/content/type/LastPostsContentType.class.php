@@ -23,9 +23,9 @@ class LastPostsContentType extends AbstractContentType {
 	}
 
 	public function getOutput(Content $content) {
-		$data = $content->handleContentData();
+		
 		$list = new LatestPostsList();
-		$list->sqlLimit = $data['limit'];
+		$list->sqlLimit = $content->limit;
 		$list->readObjects();
 		WCF::getTPL()->assign(array(
 			'list' => $list
