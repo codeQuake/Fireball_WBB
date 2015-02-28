@@ -22,7 +22,7 @@ class LastPostsContentType extends AbstractContentType {
 		return 'lastPostsContentType';
 	}
 
-	public function getOutput(Content $content) {
+	public function getOutput (Content $content) {
 		
 		$list = new LatestPostsList();
 		$list->sqlLimit = $content->limit;
