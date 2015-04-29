@@ -6,7 +6,7 @@
 		<packagename>Fireball CMS - Burning Board Integration</packagename>
 		<packagedescription>Stellt Funktionen des WoltLab Burning Boards in der Seitenverwaltung zur Verfügung</packagedescription>
 		<plugin>de.codequake.cms</plugin>
-		<version>1.0.0 Beta 2</version>
+		<version>1.0.0</version>
 		<date>2014-07-08</date>
 	</packageinformation>
 
@@ -34,9 +34,13 @@
 		<instruction type="objectType">xml/objectType.xml</instruction>
 	</instructions>
   
-  <instructions type="update" fromversion="1.0.0 Beta 1">
-    <instruction type="file" application="cms">files.tar</instruction>
+	<instructions type="update" fromversion="1.0.0 Beta 1">
+		<instruction type="file" application="cms">files.tar</instruction>
 		<instruction type="acpTemplate" application="cms">acptemplates.tar</instruction>
 		<instruction type="template" application="cms">templates.tar</instruction>
-  </instructions>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0 Beta 2">
+		<instruction type="template" application="cms">templates.tar</instruction>
+	</instructions>
 </package>
