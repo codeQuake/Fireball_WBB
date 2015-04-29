@@ -8,7 +8,7 @@
 				</div>
 				<small>
 				{if $item->userID}<a href="{link controller='User' object=$item->getUserProfile()->getDecoratedObject()}{/link}" class="userLink" data-user-id="{@$item->userID}">{$item->username}</a>{else}{$item->username}{/if}
-					- {@$item->time|time}
+					- {@$item->lastPostTime|time}
 				</small>
 			</div>
 		</li>
