@@ -7,7 +7,7 @@
 		<packagedescription>Stellt Funktionen des WoltLab Burning Boards in der Seitenverwaltung zur Verfügung</packagedescription>
 		<plugin>de.codequake.cms</plugin>
 		<version>1.0.0</version>
-		<date>2014-07-08</date>
+		<date>2015-04-29</date>
 	</packageinformation>
 
 	<authorinformation>
