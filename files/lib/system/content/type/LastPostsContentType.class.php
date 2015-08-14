@@ -2,7 +2,7 @@
 namespace cms\system\content\type;
 
 use cms\data\content\Content;
-use wbb\data\thread\LatestPostsList;
+use wbb\data\thread\CMSLatestPostsList;
 use wcf\system\WCF;
 
 /**
@@ -23,11 +23,12 @@ class LastPostsContentType extends AbstractContentType {
 	}
 
 	public function getOutput(Content $content) {
-		$postList = new LatestPostsList();
-		$postList->sqlLimit = $content->limit;
+		$postList = new CMSLatestPostsList($content->limit);
 		$postList->readObjects();
+		$posts = $postList->getObjects();
+		
 		WCF::getTPL()->assign(array(
-			'postList' => $postList
+			'postList' => $posts
 		));
 		return WCF::getTPL()->fetch('lastPostsContentTypeOutput', 'cms');
 	}
