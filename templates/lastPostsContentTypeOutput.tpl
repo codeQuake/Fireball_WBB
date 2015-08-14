@@ -1,5 +1,5 @@
 <ul class="cmsThreadList">
-	{foreach from=$list item=post}
+	{foreach from=$postList item=post}
 		<li class="box32">
 			{if $post->lastPoster}
 				<a href="{link application='wbb' controller='Thread' object=$post->getDecoratedObject()}action=firstNew{/link}" class="framed jsTooltip" title="{lang}wbb.thread.gotoFirstNewPost{/lang}">{@$post->getLastPosterProfile()->getAvatar()->getImageTag(32)}</a>

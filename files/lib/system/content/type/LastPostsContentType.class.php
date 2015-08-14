@@ -23,11 +23,11 @@ class LastPostsContentType extends AbstractContentType {
 	}
 
 	public function getOutput(Content $content) {
-		$list = new LatestPostsList();
-		$list->sqlLimit = $content->limit;
-		$list->readObjects();
+		$postList = new LatestPostsList();
+		$postList->sqlLimit = $content->limit;
+		$postList->readObjects();
 		WCF::getTPL()->assign(array(
-			'list' => $list
+			'postList' => $postList
 		));
 		return WCF::getTPL()->fetch('lastPostsContentTypeOutput', 'cms');
 	}
