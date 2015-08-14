@@ -1,15 +1,28 @@
 <ul class="cmsThreadList">
-	{foreach from=$list item=item}
+	{foreach from=$list item=post}
 		<li class="box32">
-			{if $item->getUserProfile()->getAvatar()}<a href="{link controller="User" object=$item->getUserProfile()}{/link}" class="framed">{@$item->getUserProfile()->getAvatar()->getImageTag(32)}</a>{else}<span class="icon icon-file icon32"></span>{/if}
-			<div class="details">
-				<div class="containerHeadline">
-					<h3><a class="wbbTopicLink" href="{link controller='Thread' object=$item application='wbb'}{/link}">{$item->topic}</a></h3>
-				</div>
+			{if $post->lastPoster}
+				<a href="{link application='wbb' controller='Thread' object=$post->getDecoratedObject()}action=firstNew{/link}" class="framed jsTooltip" title="{lang}wbb.thread.gotoFirstNewPost{/lang}">{@$post->getLastPosterProfile()->getAvatar()->getImageTag(32)}</a>
+			{else}
+				<a href="{link application='wbb' controller='Thread' object=$post->getDecoratedObject()}action=firstNew{/link}" class="framed jsTooltip" title="{lang}wbb.thread.gotoFirstNewPost{/lang}">{@$post->getUserProfile()->getAvatar()->getImageTag(32)}</a>
+			{/if}
+			
+			<div class="sidebarBoxHeadline">
+				<h3><a href="{link application='wbb' controller='Thread' object=$post->getDecoratedObject()}action=firstNew{/link}" {if $post->getBoard()->getPermission('canReadThread')} class="wbbTopicLink"{/if} data-thread-id="{@$post->threadID}" data-sort-order="DESC" title="{$post->topic}">{$post->topic}</a></h3>
 				<small>
-				{if $item->userID}<a href="{link controller='User' object=$item->getUserProfile()->getDecoratedObject()}{/link}" class="userLink" data-user-id="{@$item->userID}">{$item->username}</a>{else}{$item->username}{/if}
-					- {@$item->lastPostTime|time}
-				</small>
+					{if $post->lastPoster}
+						{if $post->lastPosterID}
+							<a href="{link controller='User' object=$post->getLastPosterProfile()->getDecoratedObject()}{/link}" class="userLink" data-user-id="{@$post->getLastPosterProfile()->userID}">{$post->lastPoster}</a>
+						{else}
+							{$post->lastPoster}
+						{/if}
+					{else}
+						{if $post->userID}
+							<a href="{link controller='User' object=$post->getUserProfile()->getDecoratedObject()}{/link}" class="userLink" data-user-id="{@$post->userID}">{$post->username}</a>
+						{else}
+							{$post->username}
+						{/if}
+					{/if} - {@$post->lastPostTime|time}</small>
 			</div>
 		</li>
 	{/foreach}
